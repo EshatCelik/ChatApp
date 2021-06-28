@@ -31,14 +31,15 @@ namespace ChatApp
             //get user ip
 
             txtLocalIp.Text = getLocalIp();
-            txtRemoteIp.Text = getLocalIp();
+            txtRemoteIp.Text = txtRemoteIp.Text;
 
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            epLocal = new IPEndPoint(IPAddress.Parse(txtLocalIp.Text), Convert.ToInt32(txtLocalPort.Text));
 
+
+            epLocal = new IPEndPoint(IPAddress.Parse(txtLocalIp.Text), Convert.ToInt32(txtLocalPort.Text));
             sck.Bind(epLocal);
 
             //connectin to remote ip
